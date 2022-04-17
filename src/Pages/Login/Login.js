@@ -106,7 +106,7 @@ const Login = () => {
         <ToastContainer />
 
         <p>
-          Don't have an account? <Link to="/signup">Sign up first</Link>
+          Don't have an account? <Link className="sign-up" to="/signup">Sign up first</Link>
         </p>
       </form>
 

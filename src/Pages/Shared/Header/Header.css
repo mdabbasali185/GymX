@@ -10,8 +10,8 @@
 
 .link-active {
   color: #f48460;
-
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 .link-active:hover {
   color: #f48460;

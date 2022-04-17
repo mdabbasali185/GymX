@@ -17,7 +17,7 @@ const Home = () => {
       {
         <div className="container mb-5">
           <h1 className="text-center text-secondary fw-bold mt-5">
-          WHAT WE CAN OFFER OUR SERVICES {services.length}
+          WHAT WE CAN OFFER <span className="d-block services">OUR SERVICES</span> 
           </h1>
           <div className="card-compo">
             {services.map(
