@@ -16,8 +16,10 @@ import Home from "./Pages/Home/Home/Home";
 function App() {
   return (
     <div className="App">
+      <Header></Header>
       <Routes>
-        <Route path="/" element={<Header></Header>}></Route>
+      
+        <Route path="/" element={<Home></Home>}></Route>
         <Route path="/trainer" element={<Trainer></Trainer>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/classes" element={<Classes></Classes>}></Route>
