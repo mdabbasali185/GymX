@@ -11,6 +11,7 @@ import RequireAuth from "./Auth/RequireAuth/RequireAuth";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Home from "./Pages/Home/Home/Home";
 
 function App() {
   return (
@@ -19,19 +20,19 @@ function App() {
         <Route path="/" element={<Header></Header>}></Route>
         <Route path="/trainer" element={<Trainer></Trainer>}></Route>
         <Route path="/about" element={<About></About>}></Route>
+        <Route path="/classes" element={<Classes></Classes>}></Route>
         <Route
-          path="/classes"
+          path="/services"
           element={
             <RequireAuth>
-              <Classes></Classes>
+              <Services></Services>
             </RequireAuth>
           }
         ></Route>
-        <Route path="/services" element={<Services></Services>}></Route>
         <Route path="/elements" element={<Elements></Elements>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
-        
+        <Route path="/home" element={<Home></Home>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
