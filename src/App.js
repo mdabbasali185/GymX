@@ -9,6 +9,8 @@ import Services from "./Pages/Home/Services/Services";
 import Elements from "./Pages/Home/Elements/Elements";
 import RequireAuth from "./Auth/RequireAuth/RequireAuth";
 import Login from "./Pages/Login/Login";
+import Signup from "./Pages/Signup/Signup";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -28,7 +30,10 @@ function App() {
         <Route path="/services" element={<Services></Services>}></Route>
         <Route path="/elements" element={<Elements></Elements>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<Signup></Signup>}></Route>
+        
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

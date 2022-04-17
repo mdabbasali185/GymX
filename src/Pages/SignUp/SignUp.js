@@ -3,7 +3,7 @@ import { ToastContainer } from "react-bootstrap";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
-import auth from "../../Firebase/Firebase.init";
+import auth from "../../Firebase/firebase.init";
 
 const Signup = () => {
   const [userInfo, setUserInfo] = useState({
@@ -90,9 +90,10 @@ const Signup = () => {
 
   return (
     <div className="login-container">
-      <div className="login-title">Sign up</div>
+      <div className="login-title">SignUp</div>
       <form className="login-form" onSubmit={handleLogin}>
         <input
+          className="w-50"
           type="text"
           placeholder="Your Email"
           onChange={handleEmailChange}
@@ -100,6 +101,7 @@ const Signup = () => {
         {errors?.email && <p className="error-message">{errors.email}</p>}
         <div className="relative">
           <input
+            className="w-50 mt-3"
             type={showPass ? "text" : "password"}
             placeholder="password"
             onChange={handlePasswordChange}
@@ -107,20 +109,15 @@ const Signup = () => {
           {errors?.password && (
             <p className="error-message">{errors.password}</p>
           )}
-          <p
-            className="absolute top-3 right-5"
-            onClick={() => setShowPass(!showPass)}
-          >
-            🔥
-          </p>
         </div>
         <input
+          className="w-50 mt-3"
           type="password"
           placeholder="confirm password"
           onChange={handleConfirmPasswordChange}
         />
 
-        <button>Sign up</button>
+        <button className="allButton d-block mx-auto m-2">Sign up</button>
 
         <ToastContainer />
       </form>

@@ -1,0 +1,34 @@
+.login-container {
+  background: #eef2ff;
+  text-align: center;
+}
+.login-title {
+  background: #f6e7d8;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #F48460;
+  padding: 5px;
+}
+.login-form {
+  margin: 20px;
+}
+.error-message{
+    color: #FFA0A0;
+   font-size: 1.1rem;
+}
+.allButton{
+    background: #F48460;
+    color: white;
+    padding: 10px 45px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all .8s;
+}
+.allButton:hover{
+    background: #383838;
+    
+}
