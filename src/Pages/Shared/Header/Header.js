@@ -1,14 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
+import gymx from '../../../Images/gymx_logo.png'
 const Header = () => {
   return (
     <nav className="nav-link header">
       <div className="container d-flex justify-content-center align-items-center gap-5">
         <div>
-          <h1>
-            GYM<span className="left-side text-danger">X</span>
-          </h1>
+        <img className="img-fluid" src={gymx} alt="gymx" />
         </div>
         <div className="d-flex gap-4">
           <NavLink
