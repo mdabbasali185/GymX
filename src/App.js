@@ -12,6 +12,7 @@ import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Home from "./Pages/Home/Home/Home";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -31,9 +32,10 @@ function App() {
           }
         ></Route>
 
+        <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
-        <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
     </div>

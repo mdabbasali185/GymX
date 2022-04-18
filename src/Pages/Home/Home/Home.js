@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../../Cart/Cart";
+import newImg from "../../../Images/New.jpg";
+import sale from "../../../Images/Sale.jpg";
 import "./Home.css";
 
 const Home = () => {
@@ -14,12 +16,13 @@ const Home = () => {
   return (
     <div>
       <div className="banner">
-          <h1 className="custom-style ">JUST DON'T GIVE UP</h1>
+        <h1 className="custom-style ">JUST DON'T GIVE UP</h1>
       </div>
       {
         <div className="container mb-5">
           <h1 className="text-center text-secondary fw-bold mt-5">
-          WHAT WE CAN OFFER <span className="d-block services">OUR SERVICES</span> 
+            WHAT WE CAN OFFER{" "}
+            <span className="d-block services">OUR SERVICES</span>
           </h1>
           <div className="card-compo">
             {services.map(
@@ -29,18 +32,29 @@ const Home = () => {
           </div>
           <div className=" d-flex justify-content-center">
             <Link className="services-container allButton" to="/services">
-              
               See more
             </Link>
           </div>
         </div>
       }
-      <div className="trainer mb-5 ">
-          
-          <h1 className="custom-style">PARTNER UP - DOUBLE POWER</h1>
-          <Link className="allButton text-decoration-none" to='trainer'> CHOOSE YOUR TRAINER</Link>
-
+      <div className="trainer">
+        <h1 className="custom-style">PARTNER UP - DOUBLE POWER</h1>
+        <Link className="allButton text-decoration-none" to="trainer">
+         
+          CHOOSE YOUR TRAINER
+        </Link>
       </div>
+      <div className="hot-sale py-5">
+        <div className="container d-flex  ">
+          <div>
+            <img className="img-fluid" src={newImg} alt="newImg" />
+          </div>
+          <div>
+            <img className="img-fluid" src={sale} alt="" />
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
 };
