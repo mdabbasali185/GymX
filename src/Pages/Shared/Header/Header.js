@@ -1,14 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
-import gymx from '../../../Images/gymx_logo.png'
+import gymx from "../../../Images/gymx_logo.png";
 import { Nav } from "react-bootstrap";
 const Header = () => {
   return (
     <nav className="nav-link header">
       <div className="container d-flex justify-content-center align-items-center gap-5">
         <div>
-        <img className="img-fluid" src={gymx} alt="gymx" />
+          <img className="img-fluid" src={gymx} alt="gymx" />
         </div>
         <div className="d-flex gap-4">
           <NavLink
@@ -31,17 +31,17 @@ const Header = () => {
           </NavLink>
           <NavLink
             className={({ isActive }) => (isActive ? "link-active" : "link")}
-            to="/classes"
-          >
-            Classes
-          </NavLink>
-          <NavLink
-            className={({ isActive }) => (isActive ? "link-active" : "link")}
             to="/services"
           >
             Services
           </NavLink>
-          
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/about"
+          >
+            AboutMe
+          </NavLink>
+
           <NavLink
             className={({ isActive }) => (isActive ? "link-active" : "link")}
             to="/login"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Cart from "../../Cart/Cart";
-import newImg from "../../../Images/New.jpg";
+
 import sale from "../../../Images/Sale.jpg";
 import "./Home.css";
 
@@ -21,7 +21,7 @@ const Home = () => {
       {
         <div className="container mb-5">
           <h1 className="text-center text-secondary fw-bold mt-5">
-            WHAT WE CAN OFFER{" "}
+            WHAT WE CAN OFFER
             <span className="d-block services">OUR SERVICES</span>
           </h1>
           <div className="card-compo">
@@ -45,16 +45,14 @@ const Home = () => {
         </Link>
       </div>
       <div className="hot-sale py-5">
-        <div className="container d-flex  ">
+        <div className="container ">
+          
           <div>
-            <img className="img-fluid" src={newImg} alt="newImg" />
-          </div>
-          <div>
-            <img className="img-fluid" src={sale} alt="" />
+            <img className="img-fluid mx-auto w-50 d-block" src={sale} alt="" />
           </div>
         </div>
       </div>
-      
+
     </div>
   );
 };
