@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { ToastContainer } from "react-bootstrap";
+
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import toast from "react-hot-toast";
+import { ToastContainer, toast } from 'react-toastify';
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 
 const Signup = () => {
+  // state set 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const notify = (errorToast) => toast(errorToast);
 
   const [createUserWithEmailAndPassword, user, loading, hookError] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
@@ -16,7 +18,7 @@ const Signup = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert("password does not match");
+      notify("password does not match");
       return;
     }
     createUserWithEmailAndPassword(email, password);
@@ -24,7 +26,7 @@ const Signup = () => {
 
   useEffect(() => {
     if (hookError) {
-      alert(hookError.message);
+      notify(hookError.message);
     }
   }, [hookError]);
   const navigate = useNavigate();

@@ -1,16 +1,20 @@
 import React from "react";
-import './Cart.css'
+import { Link } from "react-router-dom";
+import "./Cart.css";
 
 const Cart = (props) => {
   const { name, about, picture } = props.product;
   return (
-    <div className="p-4 user-card mb-4">
-      <div className="text-center">
+    <div class="col">
+      <div class="card">
         <img className="user-img mb-4" src={picture} alt="" />
-      </div>
-      <div className="text-center">
-        <h4>Name: {name}</h4>
-        <p>{about}</p>
+        <div class="card-body">
+          <h5 class="card-title">Name: {name}</h5>
+          <p class="card-text">{about}</p>
+        </div>
+        <Link className="allButton text-decoration-none" to="checkout">
+          CheckOut
+        </Link>
       </div>
     </div>
   );

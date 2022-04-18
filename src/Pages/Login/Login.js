@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { ToastContainer } from "react-bootstrap";
+
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import toast from "react-hot-toast";
+import { ToastContainer, toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import "./Login.css";
@@ -24,14 +24,23 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
+  const notify = (errorToast) => toast(errorToast);
   if (user || googleUser) {
     navigate(from);
+    
   }
 
-  if (googleError) {
-    console.log(googleError);
-  }
+  useEffect(()=>{
+    if (googleError) {
+      notify(googleError.message)
+    }
+  },[googleError])
+  useEffect(()=>{
+    if (hookError) {
+      notify(hookError.message)
+    }
+  },[hookError])
+  
 
   return (
     <div className="login-container">
@@ -55,10 +64,10 @@ const Login = () => {
 
         <button className="allButton d-block mx-auto m-2">Login</button>
 
-        <ToastContainer />
+       
 
         <p>
-          Don't have an account?{" "}
+          Don't have an account?
           <Link className="sign-up" to="/signup">
             Sign up first
           </Link>

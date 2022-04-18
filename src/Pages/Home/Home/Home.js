@@ -14,6 +14,7 @@ const Home = () => {
   }, []);
 
   return (
+    // banner add 
     <div>
       <div className="banner">
         <h1 className="custom-style ">JUST DON'T GIVE UP</h1>
@@ -24,11 +25,15 @@ const Home = () => {
             WHAT WE CAN OFFER
             <span className="d-block services">OUR SERVICES</span>
           </h1>
-          <div className="card-compo">
-            {services.map(
+          
+           <div className="row row-cols-md-3">
+           {services.map(
               (item, index) =>
                 index < 3 && <Cart key={index} product={item}></Cart>
+                
             )}
+          
+            
           </div>
           <div className=" d-flex justify-content-center">
             <Link className="services-container allButton" to="/services">
@@ -46,9 +51,10 @@ const Home = () => {
         </div>
       </div>
       <div className="hot-sale py-5">
-        <div className="container ">
+        <div className="container text-center ">
           <div>
             <img className="img-fluid mx-auto w-50 d-block" src={sale} alt="" />
+            <Link className="allButton text-decoration-none" to="blogs">Buy Now</Link>
           </div>
         </div>
       </div>

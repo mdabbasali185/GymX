@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import 'react-toastify/dist/ReactToastify.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import Header from "./Pages/Shared/Header/Header";
 import Trainer from "./Pages/Home/Trainer/Trainer";
 import Services from "./Pages/Home/Services/Services";
@@ -12,6 +13,7 @@ import Home from "./Pages/Home/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
 import AboutMe from "./Pages/AboutMe/AboutMe";
 import Blogs from "./Pages/Blogs/Blogs";
+import CheckOut from "./Pages/CheckOut/CheckOut";
 
 function App() {
   return (
@@ -21,7 +23,14 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/trainer" element={<Trainer></Trainer>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <CheckOut></CheckOut>
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/services"
           element={
