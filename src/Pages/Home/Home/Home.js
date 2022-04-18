@@ -38,21 +38,20 @@ const Home = () => {
         </div>
       }
       <div className="trainer">
-        <h1 className="custom-style">PARTNER UP - DOUBLE POWER</h1>
-        <Link className="allButton text-decoration-none" to="trainer">
-         
-          CHOOSE YOUR TRAINER
-        </Link>
+        <div>
+          <h1 className="custom-style py-3">PARTNER UP - DOUBLE POWER</h1>
+          <Link className="allButton text-decoration-none" to="trainer">
+            CHOOSE YOUR TRAINER
+          </Link>
+        </div>
       </div>
       <div className="hot-sale py-5">
         <div className="container ">
-          
           <div>
             <img className="img-fluid mx-auto w-50 d-block" src={sale} alt="" />
           </div>
         </div>
       </div>
-
     </div>
   );
 };

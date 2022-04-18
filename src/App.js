@@ -3,7 +3,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./Pages/Shared/Header/Header";
 import Trainer from "./Pages/Home/Trainer/Trainer";
-import About from "./Pages/About/About";
 import Services from "./Pages/Home/Services/Services";
 import RequireAuth from "./Auth/RequireAuth/RequireAuth";
 import Login from "./Pages/Login/Login";
@@ -12,6 +11,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Home from "./Pages/Home/Home/Home";
 import NotFound from "./Pages/NotFound/NotFound";
 import AboutMe from "./Pages/AboutMe/AboutMe";
+import Blogs from "./Pages/Blogs/Blogs";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/trainer" element={<Trainer></Trainer>}></Route>
-        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
 
         <Route
           path="/services"
@@ -32,7 +32,7 @@ function App() {
         ></Route>
 
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/about" element={<AboutMe></AboutMe>}></Route>
+        <Route path="/aboutme" element={<AboutMe></AboutMe>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="*" element={<NotFound />} />

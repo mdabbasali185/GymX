@@ -1,7 +1,7 @@
 import React from "react";
-import './About.css'
+import './Blogs.css'
 
-const About = () => {
+const Blogs = () => {
   return (
     <div className="about-title">
       <div className="container">
@@ -49,4 +49,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Blogs;
