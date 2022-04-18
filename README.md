@@ -1,6 +1,6 @@
 # GYMX
 
-This project was bootstrapped with [GYMX](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [GYMX](https://gym-55c6d.web.app).
 
 
 ## Authors
