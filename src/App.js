@@ -6,7 +6,7 @@ import Trainer from "./Pages/Home/Trainer/Trainer";
 import About from "./Pages/About/About";
 import Classes from "./Pages/Home/Classes/Classes";
 import Services from "./Pages/Home/Services/Services";
-import Elements from "./Pages/Home/Elements/Elements";
+
 import RequireAuth from "./Auth/RequireAuth/RequireAuth";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
@@ -18,7 +18,6 @@ function App() {
     <div className="App">
       <Header></Header>
       <Routes>
-      
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/trainer" element={<Trainer></Trainer>}></Route>
         <Route path="/about" element={<About></About>}></Route>
@@ -31,7 +30,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/elements" element={<Elements></Elements>}></Route>
+
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>

@@ -89,7 +89,7 @@ const Login = () => {
     <div className="login-container">
       <div className="login-title">LOGIN</div>
       <form className="login-form" onSubmit={handleLogin}>
-        <input className="w-50"
+        <input  className="w-50"
           type="text"
           placeholder="Your Email"
           onChange={handleEmailChange}

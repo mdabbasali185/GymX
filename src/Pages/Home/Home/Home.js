@@ -13,7 +13,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="banner"></div>
+      <div className="banner">
+          <h1 className="custom-style ">JUST DON'T GIVE UP</h1>
+      </div>
       {
         <div className="container mb-5">
           <h1 className="text-center text-secondary fw-bold mt-5">
@@ -33,6 +35,12 @@ const Home = () => {
           </div>
         </div>
       }
+      <div className="trainer mb-5 ">
+          
+          <h1 className="custom-style">PARTNER UP - DOUBLE POWER</h1>
+          <Link className="allButton text-decoration-none" to='trainer'> CHOOSE YOUR TRAINER</Link>
+
+      </div>
     </div>
   );
 };

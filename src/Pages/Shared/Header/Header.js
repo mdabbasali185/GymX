@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import gymx from '../../../Images/gymx_logo.png'
+import { Nav } from "react-bootstrap";
 const Header = () => {
   return (
     <nav className="nav-link header">
@@ -52,12 +53,12 @@ const Header = () => {
           >
             LogIn
           </NavLink>
-          <NavLink
+          <Nav
             className={({ isActive }) => (isActive ? "link-active" : "link")}
             to="/signup"
           >
             Signup
-          </NavLink>
+          </Nav>
         </div>
       </div>
     </nav>
