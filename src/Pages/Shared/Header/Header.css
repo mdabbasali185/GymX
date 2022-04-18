@@ -3,6 +3,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: whitesmoke;
+  padding: 0 10px;
 }
 .link:hover {
   color: #f48460;

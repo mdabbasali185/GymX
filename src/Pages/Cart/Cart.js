@@ -5,14 +5,14 @@ import "./Cart.css";
 const Cart = (props) => {
   const { name, about, picture } = props.product;
   return (
-    <div class="col">
-      <div class="card">
+    <div className="col">
+      <div className="card h-100 mx-auto">
         <img className="user-img mb-4" src={picture} alt="" />
-        <div class="card-body">
-          <h5 class="card-title">Name: {name}</h5>
-          <p class="card-text">{about}</p>
+        <div className="card-body">
+          <h5 className="card-title">Name: {name}</h5>
+          <p className="card-text">{about}</p>
         </div>
-        <Link className="allButton text-decoration-none" to="checkout">
+        <Link className="allButton text-decoration-none text-center " to="checkout">
           CheckOut
         </Link>
       </div>

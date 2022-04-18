@@ -26,7 +26,7 @@ const Home = () => {
             <span className="d-block services">OUR SERVICES</span>
           </h1>
           
-           <div className="row row-cols-md-3">
+           <div className="row row-cols-md-3 align-items-stretch ">
            {services.map(
               (item, index) =>
                 index < 3 && <Cart key={index} product={item}></Cart>

@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useSendPasswordResetEmail,
 } from "react-firebase-hooks/auth";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import "./Login.css";
@@ -16,31 +17,34 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, googleUser, loading2, googleError] =
     useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmail(email, password);
   };
-
+  const forgetPassword = () => {
+    sendPasswordResetEmail(email);
+    notify("send email");
+  };
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const notify = (errorToast) => toast(errorToast);
   if (user || googleUser) {
     navigate(from);
-    
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     if (googleError) {
-      notify(googleError.message)
+      notify(googleError.message);
     }
-  },[googleError])
-  useEffect(()=>{
+  }, [googleError]);
+  useEffect(() => {
     if (hookError) {
-      notify(hookError.message)
+      notify(hookError.message);
     }
-  },[hookError])
-  
+  }, [hookError]);
 
   return (
     <div className="login-container">
@@ -64,8 +68,6 @@ const Login = () => {
 
         <button className="allButton d-block mx-auto m-2">Login</button>
 
-       
-
         <p>
           Don't have an account?
           <Link className="sign-up" to="/signup">
@@ -76,6 +78,13 @@ const Login = () => {
 
       <button className="allButton mb-5" onClick={() => signInWithGoogle()}>
         Google
+      </button>
+      <button
+        className="allButton mb-5 btn"
+        onClick={forgetPassword}
+        disabled={!email.length}
+      >
+        Forget Password
       </button>
     </div>
   );
