@@ -4,13 +4,13 @@ import Cart from "../../Cart/Cart";
 
 import sale from "../../../Images/Sale.jpg";
 import "./Home.css";
+import axios from "axios";
 
 const Home = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("data.json")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
+    axios.get("services")
+      .then((res) => setServices(res.data));
   }, []);
 
   return (
@@ -25,17 +25,17 @@ const Home = () => {
             WHAT WE CAN OFFER
             <span className="d-block services">OUR SERVICES</span>
           </h1>
-          
-           <div className="row row-cols-md-3 align-items-stretch ">
-           {services.map(
+
+          <div className="row row-cols-md-3 align-items-stretch ">
+            {services.map(
               (item, index) =>
                 index < 3 && <Cart key={index} product={item}></Cart>
-                
+
             )}
-          
-            
+
+
           </div>
-          <div className=" d-flex justify-content-center">
+          <div className="mt-3 d-flex justify-content-center">
             <Link className="services-container allButton" to="/services">
               See more
             </Link>
@@ -54,7 +54,7 @@ const Home = () => {
         <div className="container text-center ">
           <div>
             <img className="img-fluid mx-auto w-50 d-block" src={sale} alt="" />
-            <Link className="allButton text-decoration-none" to="blogs">Buy Now</Link>
+            <Link className="allButton mt-5 d-inline-block text-decoration-none" to="blogs">Buy Now</Link>
           </div>
         </div>
       </div>

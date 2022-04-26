@@ -18,7 +18,7 @@ const Header = () => {
       <Navbar className="header" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand href="#home">
-            {" "}
+
             <img className="img-fluid " width={100} src={gymx} alt="gymx" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
